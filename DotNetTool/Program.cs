@@ -19,7 +19,7 @@ namespace SubcommandSample
             {
                 configCmd.OnExecute(() =>
                 {
-                    Console.WriteLine("Specify aplication:");
+                    Console.WriteLine("Specify a lab work");
                     configCmd.ShowHelp();
                     return 1;
                 });
@@ -74,15 +74,14 @@ namespace SubcommandSample
                         Console.WriteLine($"Set input file path: {input.Value()}");
                         Console.WriteLine($"Set output file path: {output.Value()}");
                         var app = new Lab3(new DotNetTool.Utils.FileRepository(input.Value(), output.Value()));
-                        TmpLab.Main();
                         app.Main();
                     });
                 });
             });
-
+          
             app.OnExecute(() =>
             {
-                Console.WriteLine("Specify a lab work");
+                Console.WriteLine("Specify aplication:");
                 app.ShowHelp();
                 return 1;
             });

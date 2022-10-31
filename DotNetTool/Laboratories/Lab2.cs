@@ -15,7 +15,11 @@ namespace DotNetTool.Laboratories
 
         public void Main()
         {
-            FileRepository.CreateInputFile();
+            string[] lines =
+            {
+                "2 3 1", "5 1 2", "6 7 3", "2 1 2 3"
+            };
+            FileRepository.CreateInputFile(lines);
             List<string> inputData = FileRepository.ReadFromInput().ToList();
             string inputStr = string.Join(" ", inputData);
             List<string> inputArr = inputStr.Split(" ").ToList();

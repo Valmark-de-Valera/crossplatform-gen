@@ -13,17 +13,14 @@ namespace DotNetTool.Utils
             _inputFileName = inputFileName;
         }
 
-        public void CreateInputFile()
+        public void CreateInputFile(string[] inputLines)
         {
             if (File.Exists(this._inputFileName))
             {
                 File.Delete(this._inputFileName);
             }
-            string[] lines =
-            {
-            "25:12", "20:25", "25:23"
-        };
-            File.WriteAllLines(this._inputFileName, lines); ;
+           
+            File.WriteAllLines(this._inputFileName, inputLines); ;
         }
 
         public string[] ReadFromInput()

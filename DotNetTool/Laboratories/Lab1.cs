@@ -23,7 +23,11 @@ namespace DotNetTool.Laboratories
 
         public void Main()
         {
-            FileRepository.CreateInputFile();
+            string[] lines =
+            {
+                "25:12", "20:25", "25:23"
+            };
+            FileRepository.CreateInputFile(lines);
             List<string> inputData = FileRepository.ReadFromInput().ToList();
             List<string> outputData = new List<string>(inputData.Count);
             foreach (var row in inputData)
